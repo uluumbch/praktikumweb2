@@ -20,7 +20,7 @@
     ?>
     <form action="" method="post">
         Nilai : <input type="text" name="nilai" value="<?php if (isset($suhu)) echo $suhu ?>">
-        Dari: <br>
+        <br> Dari: <br>
         <input type="radio" name="dariSuhu" <?php if (isset($dariSuhu) && $dariSuhu == "Celcius") echo "checked"; ?> value="Celcius"> Celcius <br>
         <input type="radio" name="dariSuhu" <?php if (isset($dariSuhu) && $dariSuhu == "Fahrenheit") echo "checked"; ?> value="Fahrenheit"> Fahrenheit <br>
         <input type="radio" name="dariSuhu" <?php if (isset($dariSuhu) && $dariSuhu == "Rheamur") echo "checked"; ?> value="Rheamur"> Rheamur <br>
