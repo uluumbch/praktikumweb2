@@ -1,6 +1,5 @@
 <?php
-// variabel nilai yang jadi penentu form mana yang akan ditampilkan
-if ($_SERVER["REQUEST_METHOD"] == "POST") { // bila form pertama ditekan submit maka variabel nilai diberi angka yang disubmit
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nilai = (int)$_POST["nilai"];
 }
 if (isset($_POST['tambah'])) {
@@ -32,7 +31,6 @@ if (isset($_POST['kurang'])) {
 <body>
     <?php
     if (empty($nilai)) : ?>
-        <!-- kalau variabel nilai masih kosong maka form pertama yang ditampilkan -->
         <form action="" method="post">
             Jumlah Bintang: <input type="text" name="nilai">
             <button type="submit" name="masuk">Masukkan Nilai</button>
@@ -40,7 +38,7 @@ if (isset($_POST['kurang'])) {
 
     <?php
     endif;
-    if (!empty($nilai)) : // sedangkan kalau nilai sudah ada isinya maka form yang kedua yang ditampilkan
+    if (!empty($nilai)) :
     ?>
         jumlah bintang = <?= $nilai; ?>
 

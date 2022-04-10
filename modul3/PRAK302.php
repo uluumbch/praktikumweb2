@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soal 2 modul 3| Bachrul Uluum</title>
     <style>
-        .tab {
-            width: 20px;
-            height: 20px;
+        .gambar {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
@@ -18,27 +18,30 @@
     <form action="" method="post">
         Tinggi :<input type="text" name="tinggi"> <br>
         Alamat Gambar : <input type="text" name="url"> <br>
-        <input type="submit" value="cetak">
+        <input type="submit" value="cetak" name="submit">
 
     </form>
     <?php
-    $tinggi = $_POST['tinggi'];
-    $url = $_POST['url'];
+    if (isset($_POST['submit'])) {
 
-    $a = 1;
-    while ($a <= $tinggi) {
-        $b = 1;
-        while ($b < $a) {
-            echo "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;";
-            $b++;
+        $tinggi = $_POST['tinggi'];
+        $url = $_POST['url'];
+
+        $a = 1;
+        while ($a <= $tinggi) {
+            $b = 1;
+            while ($b < $a) {
+                echo "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;";
+                $b++;
+            }
+            $c = $tinggi;
+            while ($c >= $a) {
+                echo "<img src='$url'class='gambar'>";
+                $c--;
+            }
+            echo '<br>';
+            $a++;
         }
-        $c = $tinggi;
-        while ($c >= $a) {
-            echo "<img src='$url'class='tab'>";
-            $c--;
-        }
-        echo '<br>';
-        $a++;
     }
     ?>
 </body>
