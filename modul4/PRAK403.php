@@ -54,7 +54,17 @@ foreach ($data[0] as $key => $value) {
 }
 echo "</tr>";
 
-foreach ($data as  $value) {
-    echo
+foreach ($data as $key => $value) {
+    echo "<tr>";
+    foreach ($value as $k => $v) {
+        if ($k == "MK" || $k == "SKS") {
+            foreach ($data[$key] as $ey => $vlue) {
+                echo "<td>" . $vlue . "</td>";
+            }
+        } else {
+            echo "<td>" . $v . "</td>";
+        }
+    }
+    echo "</tr>";
 }
 echo "</table>";
