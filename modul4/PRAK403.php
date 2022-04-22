@@ -33,38 +33,58 @@ $data =
         ]
     ];
 
-foreach ($data as $key => $value) {
-    foreach ($value as $k => $v) {
-        echo "$k <br>";
-        if ($k == "MK" || $k == "SKS") {
-            foreach ($data[$key][$k] as $a => $b) {
-                echo "$b ";
-            }
-        } else {
-            echo "$v ";
-        }
+for ($i = 0; $i < count($data); $i++) {
+    $jumlahSKS = 0;
+    foreach ($data[$i]["SKS"] as $key => $value) {
+        $jumlahSKS += $value;
     }
-    echo "<br>";
+    $data[$i]["Total SKS"] = $jumlahSKS;
+    if ($jumlahSKS > 7) {
+        $data[$i]["Keterangan"] = "Tidak Revisi";
+    } else {
+        $data[$i]["Keterangan"] = "Revisi KRS";
+    }
 }
+
+
 
 echo "<table border='1'>";
 echo "<tr>";
-foreach ($data[0] as $key => $value) {
+foreach ($data[0] as $key => $value) { // cetak key sebagai table header
     echo "<th>" . $key . "</th>";
 }
 echo "</tr>";
 
-foreach ($data as $key => $value) {
+
+foreach ($data as $key => $isiData) {
     echo "<tr>";
-    foreach ($value as $k => $v) {
-        if ($k == "MK" || $k == "SKS") {
-            foreach ($data[$key] as $ey => $vlue) {
-                echo "<td>" . $vlue . "</td>";
-            }
+    foreach ($isiData as $k => $v) {
+        if (is_array($v)) {
+            echo "<td>" . $v[0] . "</td>";
         } else {
-            echo "<td>" . $v . "</td>";
+            if ($v == "Tidak Revisi")
+                echo "<td style='background-color: #00ff00;'>" . $v . "</td>";
+            else if ($v == "Revisi KRS")
+                echo "<td style='background-color: #ff0000;'>" . $v . "</td>";
+            else
+                echo "<td>" . $v . "</td>";
         }
     }
+
     echo "</tr>";
+
+
+    for ($j = 1; $j < count($isiData["MK"]); $j++) {
+
+        echo "<tr>";
+        foreach ($isiData as $val) {
+            if (is_array($val)) {
+                echo "<td> $val[$j] </td>";
+            } else {
+                echo "<td></td>";
+            }
+        }
+        echo "</tr>";
+    }
 }
 echo "</table>";
