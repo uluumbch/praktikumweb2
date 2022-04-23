@@ -31,7 +31,7 @@
         while ($a <= $tinggi) {
             $b = 1;
             while ($b < $a) {
-                echo "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;";
+                echo "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;" . "&nbsp;";
                 $b++;
             }
             $c = $tinggi;
