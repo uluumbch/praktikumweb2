@@ -2,7 +2,6 @@
 if (isset($_GET['id_member'])) {
     editmember();
 }
-// print_r($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +10,7 @@ if (isset($_GET['id_member'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data | Member</title>
+    <?php echo (isset($_GET['id_member'])) ? "<title>Update Data | Member</title>" : "<title>Tambah Data | Member</title>" ?>
 </head>
 
 <body>
@@ -49,7 +48,7 @@ if (isset($_GET['id_member'])) {
 
                 </td>
                 <td>
-                    <input type="datetime-local" name="tgl_daftar" <?php echo (isset($_GET['id_member'])) ?  "value = " .date('Y-m-d\TH:i', strtotime($result[0]["tgl_mendaftar"])) . "" : "value = '' "; ?> required> <br>
+                    <input type="datetime-local" name="tgl_daftar" <?php echo (isset($_GET['id_member'])) ?  "value = " . date('Y-m-d\TH:i', strtotime($result[0]["tgl_mendaftar"])) . "" : "value = '' "; ?> required> <br>
 
                 </td>
             </tr>
@@ -65,12 +64,11 @@ if (isset($_GET['id_member'])) {
             <tr>
                 <td></td>
                 <td>
-                    <?php 
+                    <?php
                     if (isset($_GET['id_member'])) {
                         echo "<button type=\"submit\" name=\"update\">Update</button>";
-                    }else {
+                    } else {
                         echo "<button type=\"submit\" name=\"submit\">Tambah</button>";
-                        
                     }
 
                     ?>
@@ -81,16 +79,13 @@ if (isset($_GET['id_member'])) {
     <?php
     if (isset($_POST['submit'])) {
         $tgl_daftar = date_create($_POST['tgl_daftar']);
-        $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
+        $tgl_daftar = date_format($tgl_daftar, "Y-m-d H:i:s");
         print_r($_POST);
         tambahdatamember($_POST['nama'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
     }
     if (isset($_POST['update'])) {
-        // $tgl_daftar = date_create($_POST['tgl_daftar']);
-        // $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
         $tgl_daftar = date('Y-m-d H:i:s', strtotime($_POST['tgl_daftar']));
-        // print_r($_POST);
-        updatemember($_GET['id_member'],$_POST['nama'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
+        updatemember($_GET['id_member'], $_POST['nama'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
     }
     ?>
 </body>

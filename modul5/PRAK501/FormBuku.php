@@ -2,7 +2,6 @@
 if (isset($_GET['id_buku'])) {
     editbuku();
 }
-// print_r($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +10,7 @@ if (isset($_GET['id_buku'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <?php echo (isset($_GET['id_buku'])) ? "<title>Update Data | Buku</title>": "<title>Tambah Data | Buku</title>" ?> 
+    <?php echo (isset($_GET['id_buku'])) ? "<title>Update Data | Buku</title>" : "<title>Tambah Data | Buku</title>" ?>
 </head>
 
 <body>
@@ -40,7 +39,7 @@ if (isset($_GET['id_buku'])) {
                 </td>
                 <td>
 
-                <input type="text" name="penerbit" <?php echo (isset($_GET['id_buku'])) ?  "value = " . $result[0]["penerbit"] . "" : "value = '' "; ?> required> <br>
+                    <input type="text" name="penerbit" <?php echo (isset($_GET['id_buku'])) ?  "value = " . $result[0]["penerbit"] . "" : "value = '' "; ?> required> <br>
                 </td>
             </tr>
             <tr>
@@ -49,19 +48,18 @@ if (isset($_GET['id_buku'])) {
 
                 </td>
                 <td>
-                <input type="text" name="thnterbit" <?php echo (isset($_GET['id_buku'])) ?  "value = " . $result[0]["tahun_terbit"] . "" : "value = '' "; ?> required> <br>
+                    <input type="text" name="thnterbit" <?php echo (isset($_GET['id_buku'])) ?  "value = " . $result[0]["tahun_terbit"] . "" : "value = '' "; ?> required> <br>
 
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <?php 
+                    <?php
                     if (isset($_GET['id_buku'])) {
                         echo "<button type=\"submit\" name=\"update\">Update</button>";
-                    }else {
+                    } else {
                         echo "<button type=\"submit\" name=\"submit\">Tambah</button>";
-                        
                     }
 
                     ?>
@@ -75,7 +73,7 @@ if (isset($_GET['id_buku'])) {
         tambahdatabuku($_POST['judul'], $_POST['penulis'], $_POST['penerbit'], $_POST['thnterbit']);
     }
     if (isset($_POST['update'])) {
-       updatebuku($_GET['id_buku'],$_POST['judul'],$_POST['penulis'],$_POST['penerbit'],$_POST['thnterbit']);
+        updatebuku($_GET['id_buku'], $_POST['judul'], $_POST['penulis'], $_POST['penerbit'], $_POST['thnterbit']);
     }
     ?>
 </body>
