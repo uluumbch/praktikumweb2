@@ -18,6 +18,7 @@ if (!isset($_SESSION['nomor_member'])) {
 </head>
 
 <body>
+    <h2>Selamat Datang : <?= $_SESSION["nama_member"] ?></h2>
     <ul>
         <li>
             <a href="Member.php">Data Member</a>

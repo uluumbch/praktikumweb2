@@ -18,7 +18,7 @@ if (isset($_SESSION['nomor_member'])) {
 
 <body>
     <table>
-        <form action="te.php" method="POST">
+        <form action="Login.php" method="POST">
             <tr>
                 <td>Nomor Member</td>
                 <td><input type="text" name="nomor_member" autofocus></td>

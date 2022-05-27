@@ -12,6 +12,7 @@ $hasil = $sql->fetch();
 if ($hasil) {
     if (password_verify($password, $hasil["password"])) {
         $_SESSION["nomor_member"] = $hasil['nomor_member'];
+        $_SESSION["nama_member"] = $hasil['nama'];
         header("Location: index.php");
     }
 } else {

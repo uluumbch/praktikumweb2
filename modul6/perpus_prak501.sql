@@ -79,7 +79,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id_member`, `nama`, `nomor_member`, `password`, `alamat`, `tgl_mendaftar`, `tgl_terakhir_bayar`) VALUES
-(255, '1', '123', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
+(255, 'Bachrul Uluum', '123', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
 (256, '2', '555-55-2', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
 (257, '0', '555-55-0', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
 (258, '1', '555-55-1', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
