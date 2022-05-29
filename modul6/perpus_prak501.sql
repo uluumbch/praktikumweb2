@@ -80,9 +80,9 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`id_member`, `nama`, `nomor_member`, `password`, `alamat`, `tgl_mendaftar`, `tgl_terakhir_bayar`) VALUES
 (255, 'Bachrul Uluum', '123', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
-(256, '2', '555-55-2', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
-(257, '0', '555-55-0', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
-(258, '1', '555-55-1', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
+(256, '2', '555552', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
+(257, '0', '555550', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
+(258, '1', '555551', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'fasdf', '2022-04-29 08:22:27', '2022-04-05'),
 (264, 'aku', '890283', '$2y$10$mWWgRlGCUEDiAVSj8RXAAe7I69Pjv/2igAOl/WPeOvOP59rOEDqc.', 'sdfsadf', '2022-03-29 00:00:00', '2022-03-31'),
 (268, 'bachri', '008899', '$2y$10$FX.m1.bdM5GgybFeWZmL3OfxDVPLiexcMPsBKXXg67X0.1o4VC1hq', ' jl muchran ali   ', '2022-04-29 21:43:00', '2022-04-21');
 
