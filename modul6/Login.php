@@ -16,5 +16,8 @@ if ($hasil) {
         header("Location: index.php");
     }
 } else {
-    header("Location: FormLogin.php");
+    echo "Nomor member atau Password yang anda masukkan salah";
+    echo "<br> anda akan dialihkan ke halaman login setelah 5 detik";
+    echo "<br> atau klik disini untuk <a href='FormLogin.php'>login</a>";
+    header("refresh:5;url= FormLogin.php");
 }

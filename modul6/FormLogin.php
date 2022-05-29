@@ -21,11 +21,11 @@ if (isset($_SESSION['nomor_member'])) {
         <form action="Login.php" method="POST">
             <tr>
                 <td>Nomor Member</td>
-                <td><input type="text" name="nomor_member" autofocus></td>
+                <td><input type="text" name="nomor_member" autofocus required></td>
             </tr>
             <tr>
                 <td>password</td>
-                <td><input type="password" name="passwd"></td>
+                <td><input type="password" name="passwd" required></td>
             </tr>
             <tr>
                 <td></td>

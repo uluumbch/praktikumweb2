@@ -1,4 +1,9 @@
-<?php require('./Model.php');
+<?php
+session_start();
+if (!isset($_SESSION['nomor_member'])) {
+    header("Location: ErrorPage.php");
+}
+require('./Model.php');
 if (isset($_GET['id_member'])) {
     editmember();
 }
